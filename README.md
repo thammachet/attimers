@@ -11,7 +11,9 @@ pip install python-dateutil
 ```
 
 ## How to use
-Usage code
+1. Clone attimers.py
+2. Put it with python file you wish to use
+3. Add the example following code in to the python file.
 ```
 from attimers import *
 timer1 = attimers('Interval','days','1:00:00',2)
