@@ -26,6 +26,7 @@ class attimers():
         if self.mode == "Specific":
             if self.mode1 == 'day':
                 self.dt=datetime.strptime(self.v1,"%d %H:%M:%S")
+                self.dt=self.dt.replace(year=now.year,month=now.month)
                 # Next date is already passed.
                 if self.dt.day < now.day:
                     nxt=now.replace(year=now.year,month=now.month,day=self.dt.day,hour=self.dt.hour,minute=self.dt.minute,second=self.dt.second)+relativedelta(months=+1)
