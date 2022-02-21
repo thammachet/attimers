@@ -43,7 +43,13 @@ Will execute every 15th at 1 am
 attimers('Interval','hours','00:15:20',1)
 ```
 Execute every 1 hour at minute =15 and second = 20
-(No need to specific minute in the argument)
+(No need to specific hour in the argument)
+
+```
+attimers('Interval','hours','00:45:50',4)
+```
+Execute every 4 hour at minute =45 and second = 50
+(No need to specific hour in the argument)
 
 ```
 attimers('Interval','minutes','00:00:20',1)
@@ -55,4 +61,4 @@ Execute every 1 minute at second = 20
 attimers('Interval','seconds','00:00:00',1)
 ```
 Execute every 1 minute at second = 20
-(No need to specific time '00:00:00')
+(No need to specific time purt '00:00:00')
