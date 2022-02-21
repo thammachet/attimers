@@ -41,4 +41,5 @@ class attimers():
         print("Next scheduler : "+str(nxt))
         print("Second left : "+str(self.secs))
         t = threading.Timer(self.secs, self.start,[func])
+        t.daemon=True
         t.start()
