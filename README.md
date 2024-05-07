@@ -1,64 +1,60 @@
+
 # python-attimers
-A python timer library that will execute function every desired time
+
+A Python timer library that executes functions at specified intervals or specific times, based on detailed scheduling options.
 
 ## Features
-Excute funtion every second minute hour or day
+- Execute functions at specific times or at regular intervals (days, hours, minutes, seconds).
 
 ## Requirements
-```
+This library requires the installation of additional Python packages:
+```bash
 pip install DateTime
 pip install python-dateutil
 ```
 
-## How to use
-1. Clone attimers.py
-2. Put it with python file you wish to use
-3. Add the example following code in to the python file.
-```
-from attimers import *
-timer1 = attimers('Interval','days','1:00:00',2)
-timer1.start(function)
+## Installation
+1. Clone the repository and include `attimers.py` in your project directory.
 
-def function:
-  ....
+## Usage
+Here's a basic example to get you started:
+
+```python
+from attimers import AtTimers
+
+# Define your function to be scheduled
+def my_scheduled_function():
+    print("Function executed!")
+
+# Set up the timer to execute the function every 2 days at 1:00 AM
+timer = AtTimers('Interval', 'days', '1:00:00', 2)
+timer.start(my_scheduled_function)
 ```
 
-  
-This example code will execute function every 2 day at 1 am
+This example sets up a timer to execute `my_scheduled_function` every 2 days at 1 AM.
 
-## Setting time to execute
-Example 
+## Setting Time to Execute
+### Specific Time Execution
+Execute a function at a specific time on a given day each month:
+```python
+AtTimers('Specific', 'day', '15 1:00:00')
+```
+This schedules the function to execute every 15th of the month at 1 AM.
 
-```
-attimers('Specific','day','15 1:00:00')
-```
-15 1:00:00
-15 = day
-1 = hour
-:00 = minute
-:00 = second
-Will execute every 15th at 1 am
+### Interval Execution
+Here are examples of setting intervals at various units of time:
+```python
+# Every hour at 15 minutes and 20 seconds
+AtTimers('Interval', 'hours', '00:15:20', 1)
 
-```
-attimers('Interval','hours','00:15:20',1)
-```
-Execute every 1 hour at minute =15 and second = 20
-(No need to specific hour in the argument)
+# Every 4 hours at 45 minutes and 50 seconds
+AtTimers('Interval', 'hours', '00:45:50', 4)
 
-```
-attimers('Interval','hours','00:45:50',4)
-```
-Execute every 4 hour at minute =45 and second = 50
-(No need to specific hour in the argument)
+# Every minute at 20 seconds
+AtTimers('Interval', 'minutes', '00:00:20', 1)
 
+# Every second
+AtTimers('Interval', 'seconds', '00:00:00', 1)
 ```
-attimers('Interval','minutes','00:00:20',1)
-```
-Execute every 1 minute at second = 20
-(No need to specific minute in the argument)
 
-```
-attimers('Interval','seconds','00:00:00',1)
-```
-Execute every 1 minute at second = 20
-(No need to specific time purt '00:00:00')
+Note: When setting intervals, specify only the units of time relevant to the interval.
